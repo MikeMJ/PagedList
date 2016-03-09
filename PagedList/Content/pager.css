@@ -1,0 +1,71 @@
+﻿/*#region Paging*/
+.pager {
+    margin: 5px 0 5px auto;
+    height: 30px;
+    width: 250px;
+    text-align: right;
+    font-size: 0;
+    padding-right: 1px;
+}
+
+    .pager a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+    }
+
+.sp-page {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    border-color: gray;
+    border-style: solid;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+    .sp-page a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+.sp-page-selected {
+    background-color: #ddd;
+}
+
+.sp-page-number {
+    width: 30px;
+    border-width: 1px 1px 1px 0;
+}
+
+.sp-page-prev {
+    width: 50px;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+.sp-page-next {
+    width: 50px;
+    border-width: 1px 1px 1px 0;
+    font-size: 20px;
+}
+
+.stamp-position{
+    height:200px;
+    width:200px;
+    border:1px solid #cec7c7;
+    float:left;
+    margin:0 0 5px 5px;
+    cursor:pointer;
+}
+.stamp-position:hover{
+    background-color:#e0d8d8
+}
+.stamp-position-left{
+    float:left;
+}
+
+/*#endregion*/

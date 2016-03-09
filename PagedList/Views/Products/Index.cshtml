@@ -1,0 +1,43 @@
+﻿@model PagedList.Models.ProductsViewModel
+<link href="~/Content/pager.css" rel="stylesheet" />
+<script src="~/Scripts/paging.js"></script>
+@{
+    ViewBag.Title = "Products";
+}
+
+
+<form action="/Products/GoToPage">
+    @Html.HiddenFor(x => x.PageNumber, new { id = "hdnPageNumber" })
+    <label>Page size @Html.TextBoxFor(x=>x.PageSize)</label>
+    
+    <div>
+        Click this button to load products  <input type="submit" id="btnSubmit" value="Load" />
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Wholesale Price</th>
+                <th>Retail price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products.List)
+            {
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Category</td>
+                    <td>@product.WholeSalePrice</td>
+                    <td>@product.RetailPrice</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</form>
+<div>
+    @Model.Products.Paginate(string.Format("javascript:goToPage({0})", "{0}"))@*{0} was given as a for the placeholder # 0 so that so put the page number in Paginate method*@
+</div>
